@@ -133,11 +133,13 @@ sub call {
 
 Google::Voice
 
-=head1 ABSTRACT
+=head1 DESCRIPTION
 
 google.com/voice services
 
 =head1 USAGE
+
+	use Google::Voice;
 
 	my $g = Google::Voice->new->login('username', 'password');
 
@@ -147,15 +149,34 @@ google.com/voice services
 	# Error code from google on fail
 	print $@ if ! $g->send_sms('invalid phone' => 'text message');
 	
+	# connect call & cancel it
+	my $call = $g->call( '+15555555555' => '+14444444444' );
+	$call->cancel;
+
+	
 	# Print all sms conversations
 	foreach my $sms ( $g->sms ) {
 	    print $sms->name;
 	    print $_->time , ':', $_->text, "\n" foreach $sms->messages;
+
+		# Delete conversation
+		$sms->delete;
 	}
 
-	# connect call & cancel it
-	my $call = $g->call( '+15555555555' => '+14444444444' );
-	$call->cancel;
+	# loop through voicemail messages
+	foreach my $vm ( $g->voicemail ) {
+
+		# Name, number, and transcribed text
+		print $vm->name . "\n";
+		print $vm->meta->{phoneNumber} . "\n";
+		print $vm->text . "\n";
+		
+		# Download mp3
+		$vm->download->move_to( $vm->id . '.mp3' );
+
+		# Delete
+		$vm->delete;
+	}
 
 =head1 METHODS
 
@@ -215,9 +236,13 @@ List of all items (call, sms, or voicemail)
 
 L<Mojo::Client>, L<Mojo::DOM>
 
+=head1 DEVELOPMENT
+
+L<http://github.com/tempire/perl-google-voice>
+
 =head1 VERSION
 
-0.01
+0.0101
 
 =head1 AUTHOR
 

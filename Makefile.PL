@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.31;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'google.com/voice services',
+  'ABSTRACT' => 'Google Voice service helper',
   'AUTHOR' => 'Glen Hinkle <tempire@cpan.org>',
   'BUILD_REQUIRES' => {
     'Test::Mojo' => '0',
@@ -30,7 +30,7 @@ my %WriteMakefileArgs = (
     'Mojo::JSON' => '0',
     'constant' => '0'
   },
-  'VERSION' => '0.01',
+  'VERSION' => '0.0101',
   'test' => {
     'TESTS' => 't/*.t'
   }

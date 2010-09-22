@@ -1,5 +1,5 @@
 ---
-abstract: 'google.com/voice services'
+abstract: 'Google Voice service helper'
 author:
   - 'Glen Hinkle <tempire@cpan.org>'
 build_requires:
@@ -21,4 +21,4 @@ requires:
   Mojo::Client: 0
   Mojo::JSON: 0
   constant: 0
-version: 0.01
+version: 0.0101
