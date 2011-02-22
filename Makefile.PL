@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.31;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Google Voice service helper',
+  'ABSTRACT' => 'Easy interface for google voice',
   'AUTHOR' => 'Glen Hinkle <tempire@cpan.org>',
   'BUILD_REQUIRES' => {
     'Test::Mojo' => '0',
@@ -23,14 +23,14 @@ my %WriteMakefileArgs = (
   'LICENSE' => 'perl',
   'NAME' => 'Google::Voice',
   'PREREQ_PM' => {
-    'IO::Socket::SSL' => '0',
+    'IO::Socket::SSL' => '1.37',
     'Mojo::Base' => '0',
     'Mojo::ByteStream' => '0',
     'Mojo::Client' => '0',
     'Mojo::JSON' => '0',
     'constant' => '0'
   },
-  'VERSION' => '0.0101',
+  'VERSION' => '0.02',
   'test' => {
     'TESTS' => 't/*.t'
   }

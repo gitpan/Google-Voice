@@ -1,5 +1,5 @@
 ---
-abstract: 'Google Voice service helper'
+abstract: 'Easy interface for google voice'
 author:
   - 'Glen Hinkle <tempire@cpan.org>'
 build_requires:
@@ -8,17 +8,17 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.31
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.102340, CPAN::Meta::Converter version 2.102400'
+generated_by: 'Dist::Zilla version 4.200001, CPAN::Meta::Converter version 2.102400'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: Google-Voice
 requires:
-  IO::Socket::SSL: 0
+  IO::Socket::SSL: 1.37
   Mojo::Base: 0
   Mojo::ByteStream: 0
   Mojo::Client: 0
   Mojo::JSON: 0
   constant: 0
-version: 0.0101
+version: 0.02
