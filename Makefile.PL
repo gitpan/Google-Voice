@@ -9,30 +9,32 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Easy interface for google voice',
-  'AUTHOR' => 'Glen Hinkle <tempire@cpan.org>',
-  'BUILD_REQUIRES' => {
-    'Test::Mojo' => '0',
-    'Test::More' => '0'
+  "ABSTRACT" => "Easy interface for google voice",
+  "AUTHOR" => "Glen Hinkle <tempire\@cpan.org>",
+  "BUILD_REQUIRES" => {
+    "Test::Mojo" => 0,
+    "Test::More" => 0
   },
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.30'
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'Google-Voice',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'Google::Voice',
-  'PREREQ_PM' => {
-    'IO::Socket::SSL' => '1.37',
-    'Mojo::Base' => '0',
-    'Mojo::ByteStream' => '0',
-    'Mojo::JSON' => '0',
-    'Mojo::UserAgent' => '0',
-    'constant' => '0'
+  "DISTNAME" => "Google-Voice",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "Google::Voice",
+  "PREREQ_PM" => {
+    "IO::Socket::SSL" => "1.37",
+    "Mojo::Base" => 0,
+    "Mojo::ByteStream" => 0,
+    "Mojo::JSON" => 0,
+    "Mojo::UserAgent" => 0,
+    "constant" => 0,
+    "strict" => 0,
+    "warnings" => 0
   },
-  'VERSION' => '0.03',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "0.04",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 
