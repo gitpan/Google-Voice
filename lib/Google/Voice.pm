@@ -12,7 +12,7 @@ use Google::Voice::Call;
 
 use Mojo::Base -base;
 
-our $VERSION = 0.04;
+our $VERSION = 0.05;
 
 __PACKAGE__->attr([qw/ ua rnr_se /]);
 
@@ -28,6 +28,8 @@ sub login {
     my $self = shift;
     my ($user, $pass) = @_;
     my $c = $self->ua;
+
+    $c->max_redirects(6);    # Google seems to like redirects everywhere
 
     # GALX value
     my $el =
@@ -45,7 +47,6 @@ sub login {
     );
 
     # rnr_se required for subsequent requests
-    $c->max_redirects(4);    # 3-4 redirects before rnr_se is available
     $el =
       $c->get('https://www.google.com/voice#inbox')
       ->res->dom->at('input[name="_rnr_se"]');
@@ -249,5 +250,7 @@ Glen Hinkle tempire@cpan.org
 =head1 CREDITS
 
 David Jones
+
+Graham Forest
 
 =cut
