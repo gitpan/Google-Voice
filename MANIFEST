@@ -4,6 +4,7 @@ MANIFEST
 META.yml
 Makefile.PL
 README.md
+c.pl
 dist.ini
 lib/Google/Voice.pm
 lib/Google/Voice/Call.pm
